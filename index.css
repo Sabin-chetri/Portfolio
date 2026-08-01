@@ -241,13 +241,74 @@ footer[id] {
     align-items: center;
 }
 
+.image {
+    --img-size: 300px;
+    position: relative;
+    width: var(--img-size);
+    height: var(--img-size);
+    animation-name: bounceLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+@keyframes bounceLeft {
+    0% {
+        transform: translateX(700px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--accent), 0 0 40px var(--accent);
-    animation-name: bouncing;
-    animation-duration: 5s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
+    position: relative;
+    z-index: 2;
+}
+
+.image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--img-size) + 40px);
+    height: calc(var(--img-size) + 40px);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px dashed var(--accent2);
+    opacity: 0.6;
+    z-index: 1;
+    animation: spinRing 12s linear infinite;
+}
+
+.image::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--img-size) + 70px);
+    height: calc(var(--img-size) + 70px);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid var(--card-border);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+@keyframes spinRing {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 @keyframes bouncing {
@@ -1001,6 +1062,7 @@ footer[id] {
     transform-style: preserve-3d;
     transition: transform 0.15s ease-out, border-color 0.3s, box-shadow 0.3s;
 }
+
 .service-card:hover,
 .timeline-card-body:hover,
 .project-card:hover {
@@ -1008,6 +1070,7 @@ footer[id] {
     border-color: #00d4ff;
     box-shadow: 0 15px 35px rgba(0, 212, 255, 0.15);
 }
+
 .project-card:hover {
     border-color: var(--p-a);
 }
@@ -1434,14 +1497,10 @@ footer {
 
 @media screen and (max-width:1000px) {
     .front-view .image {
+        --img-size: 240px;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .front-view .image img {
-        width: 80%;
-        height: 80%;
     }
 
     .about-para {
