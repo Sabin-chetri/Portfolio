@@ -72,7 +72,8 @@ header {
     height: 4rem;
     background-color: var(--bg-secondary);
     z-index: 6;
-    position: relative;
+    position: sticky;
+    top: 0;
 }
 
 section[id],
