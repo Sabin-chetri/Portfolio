@@ -92,6 +92,12 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
+    // ===== Typed.js Hero Text =====
+    new Typed('#element', {
+        strings: ['Web developer.', ' Full Stack Developer'],
+        typeSpeed: 80,
+    });
+
     const fadeIns = document.querySelectorAll(
         ".my-info, .services > div, .skill, .timeline-card, .project-card"
     );

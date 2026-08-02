@@ -162,7 +162,7 @@ footer[id] {
     font-weight: bold;
 }
 
-.Portfolio h1 {
+.Portfolio span {
     animation-name: slideRight;
     animation-duration: 1.5s;
     animation-delay: 0;
@@ -498,7 +498,7 @@ footer[id] {
     width: 100%;
 }
 
-.experience-title h1 {
+.experience-title h2 {
     text-align: center;
     margin: 50px 0;
     font-size: 44px;
@@ -672,7 +672,7 @@ footer[id] {
     width: 100%;
 }
 
-.projects-title h1 {
+.projects-title h2 {
     text-align: center;
     margin: 50px 0;
     font-size: 44px;
@@ -892,7 +892,7 @@ footer[id] {
     flex-direction: column;
 }
 
-.my-service .service-title h1 {
+.my-service .service-title h2 {
     text-align: center;
     margin: 50px 0;
     font-size: 44px;
@@ -1293,7 +1293,7 @@ footer {
     align-items: center;
 }
 
-.skills-title h1 {
+.skills-title h2 {
     text-align: center;
     margin: 50px 0;
     font-size: 44px;
